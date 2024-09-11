@@ -59,4 +59,24 @@
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/TestServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Test</display-name>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>com.koreaIT.jsp.am.Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/Test</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Test2Servlet</display-name>
+    <servlet-name>Test2Servlet</servlet-name>
+    <servlet-class>com.koreaIT.jsp.am.Test2Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test2Servlet</servlet-name>
+    <url-pattern>/Test2Servlet</url-pattern>
+  </servlet-mapping>
 </web-app>
