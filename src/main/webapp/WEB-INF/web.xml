@@ -79,4 +79,14 @@
     <servlet-name>Test2Servlet</servlet-name>
     <url-pattern>/Test2Servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberJoinServlet</display-name>
+    <servlet-name>MemberJoinServlet</servlet-name>
+    <servlet-class>com.koreaIT.jsp.am.MemberJoinServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberJoinServlet</servlet-name>
+    <url-pattern>/MemberJoinServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
