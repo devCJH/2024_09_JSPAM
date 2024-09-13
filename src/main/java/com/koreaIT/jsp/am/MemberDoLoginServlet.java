@@ -15,6 +15,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/member/doLogin")
 public class MemberDoLoginServlet extends HttpServlet {
@@ -48,6 +49,9 @@ public class MemberDoLoginServlet extends HttpServlet {
 				response.getWriter().append("<script>alert('비밀번호가 일치하지 않습니다'); history.back();</script>");
 				return;
 			}
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("loginedMemberId", memberMap.get("id"));
 			
 			response.getWriter().append(String.format("<script>alert('[ %s ] 님 환영합니다~'); location.replace('../home/main');</script>", loginId));
 			

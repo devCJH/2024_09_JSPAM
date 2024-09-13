@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/member/logout")
 public class MemberLogoutServlet extends HttpServlet {
@@ -14,6 +15,10 @@ public class MemberLogoutServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8;");
-		response.getWriter().append("<script>alert('정상적으로 로그아웃 되었습니다'); history.back();</script>");
+		
+		HttpSession session = request.getSession();
+		session.removeAttribute("loginedMemberId");
+		
+		response.getWriter().append("<script>alert('정상적으로 로그아웃 되었습니다'); location.replace('../home/main');</script>");
 	}
 }
